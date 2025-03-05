@@ -104,7 +104,7 @@ const App = () => {
   return (
     <div>
       <div className="container">
-        <h1>My MERN Stack Project (CRUD)</h1>
+        <h1>Our MERN Stack Project (CRUD)</h1>
         <form onSubmit={handleAddUser}>
           <input
             type="text"
