@@ -7,7 +7,7 @@ const App = () => {
   const [userBtn, setUserBtn] = useState("Add user");
   const [userVariant, setUserVariant] = useState({ bool: true, id: "" });
   //  API URI's
-  const BASE_URL = "https://crud-project-backend.vercel.app/api";
+  const BASE_URL = "https://crud-project-server-sooty.vercel.app/api";
   const getUsers = `${BASE_URL}/users`;
   const postUser = `${BASE_URL}/addUser`;
 
