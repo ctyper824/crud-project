@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // const mongoURI = 'mongodb+srv://mz7731346:kGdWOtV7Wto1kkxI@cluster0.r7mtc.mongodb.net/myfirstdatabase?retryWrites=true&w=majority&appName=Cluster0';
-const mongoURI = "mongodb+srv://ctyper824:simplepassword!@cluster0.gzcwm.mongodb.net/testdb?retryWrites=true&w=majority&tls=true";
+const mongoURI = "mongodb+srv://ctyper824:simplepassword!@cluster0.gzcwm.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0";
 // const mongoURI = 'mongodb://localhost:27017/crud';
 
 const connectDB = async () => {
