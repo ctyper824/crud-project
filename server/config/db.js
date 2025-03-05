@@ -3,7 +3,8 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const mongoURI = process.env.mongoURI;
+// const mongoURI = process.env.mongoURI;
+const mongoURI = "mongodb+srv://newuser:PO8r8Yoo8PrQvhNA@cluster0.gzcwm.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0";
 // const mongoURI = 'mongodb://localhost:27017/crud';
 
 const connectDB = async () => {
