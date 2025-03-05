@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushing to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull request to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Specify the operating system
+
+    steps:
+      # Step 1: Checkout code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js environment (for Node.js projects)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify the Node.js version
+
+      # Step 3: Install dependencies (npm install for Node.js)
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run Tests
+      - name: Run Tests
+        run: npm test
+
+      # Step 5: Build the project (for front-end or other builds)
+      - name: Build Project
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest  # Can be a different OS depending on your deployment platform
+    needs: build  # Wait until the build job is complete before deploying
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Step 2: Deploy to server or cloud service (for example, using SSH to deploy)
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to production..."
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} user@your-server-ip 'deploy-script.sh'
